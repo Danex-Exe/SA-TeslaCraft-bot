@@ -3,20 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev -p %PORT%\" \"node app/bot.js\"",
+    "clean": "rmdir /s /q node_modules && if exist .cache rmdir /s /q .cache && npm cache clean --force",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "ansi-to-html": "^0.7.2",
+    "axios": "^1.7.4",
+    "js-cookie": "^3.0.5",
+    "mineflayer": "^4.20.1",
+    "mineflayer-pathfinder": "^2.4.5",
+    "next": "14.2.5",
+    "prismarine-viewer": "^1.28.0",
+    "puppeteer": "^23.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "socks-proxy-agent": "^8.0.4",
+    "vec3": "^0.1.10",
+    "websocket": "^1.0.35",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   }
 }
