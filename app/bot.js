@@ -408,7 +408,7 @@ function create(host, bot_nick, distance, pin, pass) {
     } else if (message === 'Нужно авторизоваться. Напишите в чат Ваш пароль') {
       serversend({ action: 'message', "message": `[${bot_nick}] Ввел пароль`});
       bot.chat(pass);
-    } else if (message === 'Напишите в чат Ваш пин-пароль (5 цифр))) {
+    } else if (message === 'Напишите в чат Ваш пин-пароль (5 цифр)') {
       serversend({ action: 'message', "message": `[${bot_nick}] Ввел пин-код`});
       bot.chat(pin);
     }
