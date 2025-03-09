@@ -405,10 +405,10 @@ function create(host, bot_nick, distance, pin, pass) {
     if (message.includes('Вы попали в лимбо, перейти в лобби можно стандартными командами')) {
       serversend({ action: 'message', "message": `[${bot_nick}] подключился к серверу лимбо`});
       bot.chat('/mm');
-    } else if (message.includes('Нужно авторизоваться. Напишите в чат Ваш пароль')) {
+    } else if (message === 'Нужно авторизоваться. Напишите в чат Ваш пароль') {
       serversend({ action: 'message', "message": `[${bot_nick}] Ввел пароль`});
       bot.chat(pass);
-    } else if (message.includes('Напишите в чат Ваш пин-пароль (5 цифр)')) {
+    } else if (message === 'Напишите в чат Ваш пин-пароль (5 цифр))) {
       serversend({ action: 'message', "message": `[${bot_nick}] Ввел пин-код`});
       bot.chat(pin);
     }
